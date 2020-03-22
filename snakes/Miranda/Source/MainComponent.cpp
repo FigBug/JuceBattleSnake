@@ -8,7 +8,7 @@ MainComponent::MainComponent()
     o.ports = {23543};
     
     snakePit = std::make_unique<bs::SnakePit>();
-    snakePit->addSnake (*new Miranda());
+    snakePit->addSnakeEggs ([] () { return new Miranda(); });
     snakePit->start (o);
     
     setSize (600, 400);

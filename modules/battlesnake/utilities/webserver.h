@@ -11,8 +11,16 @@ public:
     
     struct Request
     {
+        // Info
         String method;
         String uri;
+        String body;
+        
+        StringPairArray headers;
+        
+        // Response
+        String contentType;
+        String response;
     };
     
     Webserver (const Options& o);

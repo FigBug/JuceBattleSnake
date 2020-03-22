@@ -31,7 +31,29 @@ struct Webserver::Impl
         r.method    = ri->request_method;
         r.uri       = ri->local_uri;
         
-        return rd->callback (r);
+        for (int i = 0; i < ri->num_headers; i++)
+            r.headers.set (ri->http_headers[i].name, ri->http_headers[i].value);
+        
+        int sz;
+        char buffer[1024];
+        while ((sz = mg_read (conn, buffer, sizeof (buffer))) > 0)
+            r.body += String::fromUTF8 (buffer, sz);
+        
+        r.contentType = "text/plain";
+        
+        int ret = rd->callback (r);
+        
+        mg_printf (conn,
+                   "HTTP/1.1 200 OK\r\n"
+                   "Content-Length: %d\r\n"
+                   "Content-Type: %s\r\n"
+                   "Connection: close\r\n\r\n",
+                   int (r.response.getNumBytesAsUTF8()),
+                   r.contentType.toRawUTF8());
+        
+        mg_write (conn, r.response.toRawUTF8(), r.response.getNumBytesAsUTF8());
+        
+        return ret;
     }
     
     SharedResourcePointer<ServerInit> serverInit;

@@ -224,7 +224,7 @@ static int zephyr_worker_stack_index;
 #endif
 
 #if !defined(DEBUG_TRACE)
-#if defined(DEBUG)
+#if defined(DEBUGXX)
 static void DEBUG_TRACE_FUNC(const char *func,
                              unsigned line,
                              PRINTF_FORMAT_STRING(const char *fmt),
