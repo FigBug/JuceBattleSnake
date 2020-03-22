@@ -36,8 +36,6 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/start", [this] (Webserver::Request& req)
     {
-        DBG (req.body);
-        
         var json = JSON::parse (req.body);
         
         if (json.isObject())
@@ -55,8 +53,6 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/move", [this] (Webserver::Request& req)
     {
-        DBG (req.body);
-        
         var json = JSON::parse (req.body);
         
         if (json.isObject())
@@ -78,8 +74,6 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/end", [this] (Webserver::Request& req)
     {
-        DBG (req.body);
-        
         var json = JSON::parse (req.body);
         
         if (json.isObject())
