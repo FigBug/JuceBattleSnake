@@ -3,6 +3,8 @@
 <JUCERPROJECT id="I2FH9E" name="Miranda" projectType="guiapp" jucerVersion="5.4.7">
   <MAINGROUP id="Z9PhsU" name="Miranda">
     <GROUP id="{193FE737-6EC2-5618-D992-62B6B74223E7}" name="Source">
+      <FILE id="d1Xzj1" name="Miranda.cpp" compile="1" resource="0" file="Source/Miranda.cpp"/>
+      <FILE id="YlZ4ce" name="Miranda.h" compile="0" resource="0" file="Source/Miranda.h"/>
       <FILE id="MmmdzV" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="rHlKkS" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
@@ -16,10 +18,6 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_core" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_cryptography" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../../Gin/juce/modules"/>
@@ -27,7 +25,7 @@
         <MODULEPATH id="juce_graphics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../../Gin/juce/modules"/>
+        <MODULEPATH id="battlesnake" path="../../modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2019 targetFolder="Builds/VisualStudio2019">
@@ -36,10 +34,6 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_core" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_cryptography" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../../Gin/juce/modules"/>
@@ -47,7 +41,7 @@
         <MODULEPATH id="juce_graphics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../../Gin/juce/modules"/>
+        <MODULEPATH id="battlesnake" path="../../modules"/>
       </MODULEPATHS>
     </VS2019>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
@@ -56,10 +50,6 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_core" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_cryptography" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../../Gin/juce/modules"/>
@@ -67,15 +57,12 @@
         <MODULEPATH id="juce_graphics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../Gin/juce/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../Gin/juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../../Gin/juce/modules"/>
+        <MODULEPATH id="battlesnake" path="../../modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="battlesnake" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
@@ -83,7 +70,6 @@
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
     <OSX/>

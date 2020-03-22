@@ -18,8 +18,8 @@
   ID:               battlesnake
   vendor:           Roland Rabien
   version:          1.0.0
-  name:             Gin
-  description:      Gin
+  name:             Battlessnake
+  description:      Battlesnake
   website:          www.rabiensoftware.com
   license:          GPL3
 
@@ -33,7 +33,7 @@
 
 #pragma once
 
-#ifndef JUCE_MODULE_AVAILABLE_gin
+#ifndef JUCE_MODULE_AVAILABLE_battlesnake
  /* If you fail to make sure that all your compile units are building JUCE with the same set of
     option flags, then there's a risk that different compile units will treat the classes as having
     different memory layouts, leading to very nasty memory corruption errors when they all get
@@ -67,5 +67,8 @@ using juce::Rectangle;
 using juce::Component;
 
 #include "utilities/webserver.h"
+#include "utilities/snake.h"
+#include "utilities/game.h"
+#include "utilities/snakepit.h"
 
 }
