@@ -9,6 +9,8 @@ public:
         right,
     };
     
+    String toString (Direction d);
+    
     Snake();
     virtual ~Snake() = default;
     
@@ -16,9 +18,17 @@ public:
     
     Game::Body* getOwnBody();
     Point<int> getHead();
+    int getHealth();
     
     void turnLeft();
     void turnRight();
+    
+    Array<Direction> possibleDirections();
+    
+    Point<int> unitVector (Direction d);
+    
+    int distanceToObstacle (Direction d);
+    std::optional<int> distanceToFood (Direction d);
     
     void moveTowards (Point<int> p);
     void avoidWalls();

@@ -3,6 +3,16 @@ Snake::Snake()
 {
 }
 
+String Snake::toString (Direction d)
+{
+    switch (d)
+    {
+        case up:    return "Up";
+        case left:  return "Left";
+        case down:  return "Down";
+        case right: return "Right";
+    }
+}
 
 Game::Body* Snake::getOwnBody()
 {
@@ -17,6 +27,14 @@ Point<int> Snake::getHead()
 {
     if (auto b = getOwnBody())
         return b->pos.getFirst();
+    
+    return {};
+}
+
+int Snake::getHealth()
+{
+    if (auto b = getOwnBody())
+        return b->health;
     
     return {};
 }
@@ -40,6 +58,24 @@ void Snake::turnRight()
         case left:  currentDirection = up;      break;
         case down:  currentDirection = left;    break;
         case right: currentDirection = down;    break;
+    }
+}
+
+Array<Snake::Direction> Snake::possibleDirections()
+{
+    switch (currentDirection)
+    {
+        case up:
+            return { left, up, right };
+        case left:
+            return { down, left, up };
+        case down:
+            return { right, down, left };
+        case right:
+            return { up, right, down };
+        default:
+            jassertfalse;
+            return {};
     }
 }
 
@@ -102,3 +138,77 @@ void Snake::avoidWalls()
             currentDirection = (y > h / 2) ? up : down;
     }
 }
+
+Point<int> Snake::unitVector (Direction d)
+{
+    switch (d)
+    {
+        case up:    return { 0, 1 };
+        case left:  return { 1, 0 };
+        case down:  return { 0, -1 };
+        case right: return { -1, 0 };
+        default:
+            jassertfalse;
+            return {};
+    }
+}
+
+int Snake::distanceToObstacle (Direction d)
+{
+    auto w = game->getBoardWidth();
+    auto h = game->getBoardHeight();
+
+    auto uv = unitVector (d);
+    auto head = getHead();
+    
+    auto x = head.x;
+    auto y = head.y;
+    
+    int distance = 0;
+
+    while (true)
+    {
+        x -= uv.x;
+        y -= uv.y;
+
+        distance++;
+        
+        if (x < 0 || x >= w || y < 0 || y >= h)
+            return distance;
+
+        for (auto b : game->getBodies())
+            for (auto p : b->pos)
+                if (p == Point<int> (x, y))
+                    return distance;
+    }
+}
+
+std::optional<int> Snake::distanceToFood (Direction d)
+{
+    auto w = game->getBoardWidth();
+    auto h = game->getBoardHeight();
+
+    auto uv = unitVector (d);
+    auto head = getHead();
+    
+    auto x = head.x;
+    auto y = head.y;
+    
+    int distance = 0;
+
+    while (true)
+    {
+        x -= uv.x;
+        y -= uv.y;
+
+        distance++;
+        
+        if (x < 0 || x >= w || y < 0 || y >= h)
+            return {};
+
+        for (auto f : game->getFood())
+            if (f->pos == Point<int> (x, y))
+                return distance;
+    }
+}
+

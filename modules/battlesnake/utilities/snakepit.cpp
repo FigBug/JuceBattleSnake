@@ -28,6 +28,8 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/ping", [this] (Webserver::Request& req)
     {
+        ScopedLock sl (lock);
+        
         req.contentType = "application/json";
         req.response    = "";
 
@@ -36,6 +38,8 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/start", [this] (Webserver::Request& req)
     {
+        ScopedLock sl (lock);
+        
         var json = JSON::parse (req.body);
         
         if (json.isObject())
@@ -53,6 +57,8 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/move", [this] (Webserver::Request& req)
     {
+        ScopedLock sl (lock);
+        
         var json = JSON::parse (req.body);
         
         if (json.isObject())
@@ -74,6 +80,8 @@ void SnakePit::start (const Webserver::Options& o)
     
     webserver->addHandler ("/end", [this] (Webserver::Request& req)
     {
+        ScopedLock sl (lock);
+        
         var json = JSON::parse (req.body);
         
         if (json.isObject())

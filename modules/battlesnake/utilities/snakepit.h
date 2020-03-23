@@ -9,6 +9,8 @@ public:
     void addSnakeEggs (std::function<Snake* ()> eggs);
     
 private:
+    CriticalSection lock;
+    
     String getUid (var json);
     
     std::unique_ptr<Webserver> webserver;
