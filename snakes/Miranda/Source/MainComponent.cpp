@@ -5,7 +5,7 @@
 MainComponent::MainComponent()
 {
     bs::Webserver::Options o;
-    o.ports = {23543};
+    o.ports = {7777};
     
     snakePit = std::make_unique<bs::SnakePit>();
     snakePit->addSnakeEggs ([] () { return new Miranda(); });

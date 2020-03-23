@@ -1,6 +1,16 @@
 Game::Game (Snake* snake_)
 {
     snake.reset (snake_);
+    snake->game = this;
+}
+
+bool Game::isOnBoard (Point<int> p)
+{
+    return
+        p.x >= 0    &&
+        p.y >= 0    &&
+        p.x < width &&
+        p.y < height;
 }
 
 var Game::start (var json)
@@ -37,9 +47,17 @@ var Game::move (var json)
 
 void Game::updateGameState (var json)
 {
+    String youId;
+    auto youObj = json.getProperty ("you", {});
+    if (youObj.isObject())
+        youId = youObj.getProperty ("id", "");
+    
     auto boardObj = json.getProperty ("board", {});
     if (boardObj.isObject())
     {
+        width  = boardObj.getProperty ("width", 0);
+        height = boardObj.getProperty ("height", 0);
+        
         auto foodArr = boardObj.getProperty ("food", {});
         if (foodArr.isArray())
         {
@@ -66,6 +84,11 @@ void Game::updateGameState (var json)
             for (auto snakeObj : *snakesArr.getArray())
             {
                 auto body = new Body();
+                
+                body->health = snakeObj.getProperty ("health", 0);
+                body->name   = snakeObj.getProperty ("name", "");
+                body->id     = snakeObj.getProperty ("id", "");
+                body->me     = body->id == youId;
                 
                 auto bodyArr = snakeObj.getProperty ("body", {});
                 if (bodyArr.isArray())

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="I2FH9E" name="Miranda" projectType="guiapp" jucerVersion="5.4.7">
+<JUCERPROJECT id="I2FH9E" name="Miranda" projectType="guiapp" jucerVersion="5.4.7"
+              cppLanguageStandard="17">
   <MAINGROUP id="Z9PhsU" name="Miranda">
     <GROUP id="{193FE737-6EC2-5618-D992-62B6B74223E7}" name="Source">
       <FILE id="d1Xzj1" name="Miranda.cpp" compile="1" resource="0" file="Source/Miranda.cpp"/>
