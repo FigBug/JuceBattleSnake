@@ -1,3 +1,9 @@
+Rectangle<int> Game::Body::getDangerZone()
+{
+    auto p = pos.getFirst();
+    return { p.x - 1, p.y - 1, 3, 3 };
+}
+
 Game::Game (Snake* snake_)
 {
     snake.reset (snake_);

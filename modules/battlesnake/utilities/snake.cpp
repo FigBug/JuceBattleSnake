@@ -177,9 +177,43 @@ int Snake::distanceToObstacle (Direction d)
             return distance;
 
         for (auto b : game->getBodies())
+        {
             for (auto p : b->pos)
                 if (p == Point<int> (x, y))
                     return distance;
+        }
+    }
+}
+
+std::optional<int> Snake::distanceToDangerZone (Direction d)
+{
+    auto w = game->getBoardWidth();
+    auto h = game->getBoardHeight();
+
+    auto uv = unitVector (d);
+    auto head = getHead();
+    
+    auto x = head.x;
+    auto y = head.y;
+    
+    int distance = 0;
+
+    while (true)
+    {
+        x -= uv.x;
+        y -= uv.y;
+
+        distance++;
+        
+        if (x < 0 || x >= w || y < 0 || y >= h)
+            return {};
+
+        for (auto b : game->getBodies())
+        {
+            if (! b->me)
+                if (b->getDangerZone().contains (Point<int> (x, y)))
+                    return distance;
+        }
     }
 }
 

@@ -23,7 +23,7 @@
   website:          www.rabiensoftware.com
   license:          GPL3
 
-  dependencies:     juce_gui_basics juce_gui_extra juce_events
+  dependencies:     juce_core juce_events
   OSXFrameworks:    Security
 
  END_JUCE_MODULE_DECLARATION
@@ -53,10 +53,9 @@
 #endif
 
 //==============================================================================
-#include <juce_gui_basics/juce_gui_basics.h>
-#include <juce_gui_extra/juce_gui_extra.h>
-#include <juce_audio_utils/juce_audio_utils.h>
+#include <juce_core/juce_core.h>
 #include <juce_events/juce_events.h>
+#include <juce_graphics/juce_graphics.h>
 
 #include <map>
 
@@ -64,7 +63,6 @@ namespace bs
 {
 using namespace juce;
 using juce::Rectangle;
-using juce::Component;
 
 #include "utilities/webserver.h"
 #include "utilities/game.h"

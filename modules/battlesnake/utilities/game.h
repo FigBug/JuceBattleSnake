@@ -11,6 +11,8 @@ public:
         int health = 0;
         bool me = false;
         Array<Point<int>> pos;
+        
+        Rectangle<int> getDangerZone();
     };
     
     struct Food

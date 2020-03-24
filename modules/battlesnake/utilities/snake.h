@@ -28,6 +28,7 @@ public:
     Point<int> unitVector (Direction d);
     
     int distanceToObstacle (Direction d);
+    std::optional<int> distanceToDangerZone (Direction d);
     std::optional<int> distanceToFood (Direction d);
     
     void moveTowards (Point<int> p);
