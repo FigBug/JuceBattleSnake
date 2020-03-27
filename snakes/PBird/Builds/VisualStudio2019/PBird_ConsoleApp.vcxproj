@@ -1,0 +1,2375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Project DefaultTargets="Build"
+         ToolsVersion="16.0"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{235D348C-8B1C-F4D5-0767-9CB63FCF9E61}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"
+                 Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'"
+                 Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"
+            Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')"
+            Label="LocalAppDataPlatform"/>
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <TargetExt>.exe</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Platform)\$(Configuration)\ConsoleApp\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\ConsoleApp\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PBird</TargetName>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\ConsoleApp\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\ConsoleApp\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PBird</TargetName>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName/>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;..\..\..\..\modules;..\..\..\..\..\juce\modules;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CONSOLE;WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2019_78A5026=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_RTAS=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader/>
+      <AssemblerListingLocation>$(IntDir)\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)\PBird.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib; msvcrt.lib;;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)\PBird.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)\PBird.bsc</OutputFile>
+    </Bscmake>
+    <Lib/>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName/>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;..\..\..\..\modules;..\..\..\..\..\juce\modules;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CONSOLE;WIN32;_WINDOWS;NDEBUG;JUCER_VS2019_78A5026=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_RTAS=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader/>
+      <AssemblerListingLocation>$(IntDir)\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)\PBird.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)\PBird.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)\PBird.bsc</OutputFile>
+    </Bscmake>
+    <Lib/>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\stackblur.cpp"/>
+    <ClCompile Include="..\..\Source\Main.cpp"/>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-hybrid\duk_alloc_hybrid.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-logging\duk_alloc_logging.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-torture\duk_alloc_torture.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\cmdline\duk_cmdline.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\cmdline\duk_cmdline_ajduk.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\codepage-conv\duk_codepage_conv.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\codepage-conv\test.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\cpp-exceptions\cpp_exceptions.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-dvalue\duk_trans_dvalue.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-dvalue\test.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-socket\duk_trans_socket_unix.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-socket\duk_trans_socket_windows.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\dummy-date-provider\dummy_date_provider.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eval\eval.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\c_eventloop.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\fileio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\main.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\ncurses.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\poll.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\eventloop\socket.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\guide\primecheck.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\guide\processlines.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\guide\uppercase.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\hello\hello.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\jxpretty\jxpretty.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\sandbox\sandbox.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src\duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-noline\duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_alloc_default.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_buffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_bytecode.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_call.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_codec.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_compile.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_debug.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_heap.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_logging.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_memory.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_object.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_stack.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_string.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_var.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_array.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_boolean.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_buffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_date.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_date_unix.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_date_windows.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_error.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_function.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_global.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_json.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_logger.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_math.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_number.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_object.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_pointer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_proxy.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_regexp.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_string.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_thread.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_thrower.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_builtins.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debug_fixedbuffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debug_heap.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debug_macros.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debug_vsnprintf.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debugger.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error_augment.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error_longjmp.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error_macros.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error_throw.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hbuffer_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hbuffer_ops.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hbufferobject_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_hashstring.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_markandsweep.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_memory.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_refcount.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_stringcache.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap_stringtable.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_class.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_enum.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_finalizer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_pc2line.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject_props.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hstring_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hthread_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hthread_builtins.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hthread_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hthread_stacks.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_call.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_compiler.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_executor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_ops.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_var.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_lexer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_numconv.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_regexp_compiler.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_regexp_executor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_replacements.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_selftest.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_strings.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_tval.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_unicode_support.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_unicode_tables.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_bitdecoder.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_bitencoder.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_bufwriter.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_hashbytes.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_hashprime.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util_tinyrandom.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-hybrid\duk_alloc_hybrid.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-logging\duk_alloc_logging.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-torture\duk_alloc_torture.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\cmdline\duk_cmdline.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\cmdline\duk_cmdline_ajduk.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\codepage-conv\duk_codepage_conv.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\codepage-conv\test.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\cpp-exceptions\cpp_exceptions.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-dvalue\duk_trans_dvalue.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-dvalue\test.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-socket\duk_trans_socket_unix.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-socket\duk_trans_socket_windows.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\dummy-date-provider\dummy_date_provider.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eval\eval.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\c_eventloop.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\fileio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\main.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\ncurses.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\poll.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\eventloop\socket.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\guide\primecheck.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\guide\processlines.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\guide\uppercase.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\hello\hello.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\jxpretty\jxpretty.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\sandbox\sandbox.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src\duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-noline\duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_alloc_default.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_buffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_bytecode.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_call.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_codec.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_compile.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_debug.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_heap.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_logging.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_memory.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_object.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_stack.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_string.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_var.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_array.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_boolean.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_buffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_date.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_date_unix.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_date_windows.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_duktape.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_error.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_function.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_global.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_json.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_logger.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_math.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_number.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_object.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_pointer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_proxy.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_regexp.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_string.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_thread.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_thrower.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_builtins.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debug_fixedbuffer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debug_heap.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debug_macros.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debug_vsnprintf.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debugger.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error_augment.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error_longjmp.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error_macros.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error_throw.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hbuffer_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hbuffer_ops.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hbufferobject_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_hashstring.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_markandsweep.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_memory.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_refcount.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_stringcache.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap_stringtable.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_class.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_enum.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_finalizer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_pc2line.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject_props.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hstring_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hthread_alloc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hthread_builtins.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hthread_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hthread_stacks.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_call.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_compiler.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_executor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_ops.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_var.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_lexer.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_numconv.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_regexp_compiler.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_regexp_executor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_replacements.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_selftest.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_strings.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_tval.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_unicode_support.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_unicode_tables.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_bitdecoder.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_bitencoder.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_bufwriter.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_hashbytes.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_hashprime.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_misc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util_tinyrandom.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\etc\all.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\etc\min.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\etc\noparser.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lapi.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lauxlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lbaselib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lcode.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldblib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldebug.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldo.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lfunc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lgc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\linit.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\liolib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\llex.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lmathlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lmem.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\loadlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lobject.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lopcodes.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\loslib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lparser.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lstate.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lstring.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lstrlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ltable.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ltablib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ltm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lua.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\luac.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lundump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lvm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lzio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\print.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lapi.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lauxlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lbaselib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lbitlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lcode.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lcorolib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lctype.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldblib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldebug.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldo.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lfunc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lgc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\linit.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\liolib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\llex.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lmathlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lmem.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\loadlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lobject.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lopcodes.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\loslib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lparser.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lstate.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lstring.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lstrlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ltable.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ltablib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ltm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lua.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\luac.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lundump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lvm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lzio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lapi.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lauxlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lbaselib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lbitlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lcode.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lcorolib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lctype.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldblib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldebug.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldo.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lfunc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lgc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\linit.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\liolib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\llex.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lmathlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lmem.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\loadlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lobject.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lopcodes.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\loslib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lparser.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lstate.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lstring.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lstrlib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ltable.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ltablib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ltm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lua.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\luac.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lundump.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lutf8lib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lvm.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lzio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lfs.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lsqlite3.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\LuaXML_lib.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\sqlite3.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\CivetServer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\civetweb.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\main.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\utilities\game.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\utilities\snake.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\utilities\snakepit.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\utilities\webserver.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\battlesnake.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\modules\battlesnake\battlesnake_civit.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_AbstractFifo.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ArrayBase.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_DynamicObject.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_HashMap_test.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_NamedValueSet.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_OwnedArray.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_PropertySet.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ReferenceCountedArray.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_SparseSet.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_Variant.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_DirectoryIterator.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_File.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileFilter.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileInputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileOutputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileSearchPath.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_TemporaryFile.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\files\juce_WildcardFileFilter.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\javascript\juce_Javascript.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\javascript\juce_JSON.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\logging\juce_FileLogger.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\logging\juce_Logger.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_BigInteger.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_Expression.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_Random.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_MemoryBlock.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_ConsoleApplication.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_Result.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_RuntimePermissions.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_Uuid.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_Files.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_JNIHelpers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_Misc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_Network.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_RuntimePermissions.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_SystemStats.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_Threads.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_curl_Network.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_linux_CommonFile.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_linux_Files.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_linux_Network.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_linux_SystemStats.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_linux_Threads.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_posix_NamedPipe.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_Files.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_Network.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_Registry.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_SystemStats.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_Threads.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_IPAddress.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_MACAddress.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_NamedPipe.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_Socket.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_URL.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\network\juce_WebInputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_BufferedInputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_FileInputSource.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_InputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_MemoryInputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_MemoryOutputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_OutputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_SubregionStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_URLInputSource.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\system\juce_SystemStats.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_Base64.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharacterFunctions.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_Identifier.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_LocalisedStrings.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_String.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringArray.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringPairArray.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringPool.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\text\juce_TextDiff.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ChildProcess.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_HighResolutionTimer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ReadWriteLock.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_Thread.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ThreadPool.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_TimeSliceThread.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_WaitableEvent.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\time\juce_PerformanceCounter.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\time\juce_RelativeTime.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\time\juce_Time.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\unit_tests\juce_UnitTest.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\xml\juce_XmlDocument.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\xml\juce_XmlElement.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\adler32.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\compress.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\crc32.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\deflate.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\infback.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inffast.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inflate.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inftrees.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\trees.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\uncompr.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\zutil.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_GZIPCompressorOutputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_GZIPDecompressorInputStream.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_ZipFile.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_core\juce_core.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_BlowFish.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_Primes.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_RSAKey.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_MD5.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_SHA256.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_Whirlpool.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_cryptography\juce_cryptography.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\app_properties\juce_ApplicationProperties.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\app_properties\juce_PropertiesFile.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\undomanager\juce_UndoManager.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_CachedValue.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_Value.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueTree.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueTreeSynchroniser.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueWithDefault.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_data_structures\juce_data_structures.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ActionBroadcaster.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_AsyncUpdater.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ChangeBroadcaster.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_ConnectedChildProcess.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_InterprocessConnection.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_InterprocessConnectionServer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_NetworkServiceDiscovery.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_ApplicationBase.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_DeletedAtShutdown.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_MessageListener.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_MessageManager.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\native\juce_android_Messaging.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\native\juce_linux_Messaging.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\native\juce_win32_Messaging.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\native\juce_win32_WinRTWrapper.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\timers\juce_MultiTimer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\timers\juce_Timer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_events\juce_events.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_Colour.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_ColourGradient.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_Colours.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_FillType.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_GraphicsContext.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_LowLevelGraphicsPostScriptRenderer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_LowLevelGraphicsSoftwareRenderer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\effects\juce_DropShadowEffect.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\effects\juce_GlowEffect.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_AttributedString.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_CustomTypeface.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_Font.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_GlyphArrangement.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_TextLayout.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_Typeface.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_AffineTransform.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_EdgeTable.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Path.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_PathIterator.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_PathStrokeType.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcapimin.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcapistd.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jccoefct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jccolor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcdctmgr.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jchuff.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcinit.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcmainct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcmarker.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcmaster.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcomapi.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcparam.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcphuff.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcprepct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jcsample.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jctrans.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdapimin.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdapistd.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdatasrc.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdcoefct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdcolor.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jddctmgr.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdhuff.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdinput.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdmainct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdmarker.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdmaster.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdmerge.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdphuff.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdpostct.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdsample.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdtrans.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jerror.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jfdctflt.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jfdctfst.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jfdctint.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jidctflt.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jidctfst.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jidctint.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jidctred.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jmemmgr.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jmemnobs.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jquant1.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jquant2.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jutils.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\transupp.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\png.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngerror.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngget.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngmem.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngpread.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngread.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngrio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngrtran.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngrutil.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngset.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngtrans.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngwio.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngwrite.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngwtran.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngwutil.c">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\juce_GIFLoader.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\juce_JPEGLoader.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\juce_PNGLoader.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_Image.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageCache.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageConvolutionKernel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageFileFormat.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_android_Fonts.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_android_GraphicsContext.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_android_IconHelpers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_freetype_Fonts.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_linux_Fonts.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_linux_IconHelpers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_mac_IconHelpers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_Direct2DGraphicsContext.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_DirectWriteTypeface.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_DirectWriteTypeLayout.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_Fonts.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_IconHelpers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\placement\juce_RectanglePlacement.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\juce\modules\juce_graphics\juce_graphics.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_battlesnake.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_battlesnake_civit.c"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_core.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_cryptography.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_data_structures.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_events.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics.cpp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\stackblur.h"/>
+    <ClInclude Include="..\..\Source\PBird.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\include\CivetServer.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\include\civetweb.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-hybrid\duk_alloc_hybrid.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-logging\duk_alloc_logging.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\alloc-torture\duk_alloc_torture.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\codepage-conv\duk_codepage_conv.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-dvalue\duk_trans_dvalue.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\examples\debug-trans-socket\duk_trans_socket.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-noline\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-noline\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_api_internal.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_bi_protos.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_builtins.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debug.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_debugger.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_error.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_exception.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_forwdecl.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hbuffer.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hbufferobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hcompiledfunction.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heap.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_heaphdr.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hnativefunction.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hstring.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_hthread.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_internal.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_jmpbuf.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_bytecode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_js_compiler.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_json.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_lexer.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_numconv.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_regexp.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_replacements.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_selftest.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_strings.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_tval.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_unicode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duk_util.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\src-separate\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-hybrid\duk_alloc_hybrid.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-logging\duk_alloc_logging.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\alloc-torture\duk_alloc_torture.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\codepage-conv\duk_codepage_conv.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-dvalue\duk_trans_dvalue.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\examples\debug-trans-socket\duk_trans_socket.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-noline\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-noline\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_api_internal.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_bi_protos.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_builtins.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_config.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debug.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_debugger.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_error.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_exception.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_forwdecl.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hbuffer.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hbufferobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hcompiledfunction.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heap.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_heaphdr.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hnativefunction.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hstring.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_hthread.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_internal.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_jmpbuf.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_bytecode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_js_compiler.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_json.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_lexer.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_numconv.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_regexp.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_replacements.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_selftest.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_strings.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_tval.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_unicode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duk_util.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\src-separate\duktape.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\etc\lua.hpp"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lapi.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lauxlib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lcode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldebug.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ldo.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lfunc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lgc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\llex.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\llimits.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lmem.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lopcodes.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lparser.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lstate.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lstring.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ltable.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\ltm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lua.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\luaconf.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lualib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lundump.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lvm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.1.5\src\lzio.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lapi.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lauxlib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lcode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lctype.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldebug.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ldo.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lfunc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lgc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\llex.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\llimits.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lmem.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lopcodes.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lparser.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lstate.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lstring.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ltable.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\ltm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lua.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lua.hpp"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\luaconf.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lualib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lundump.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lvm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.2.4\src\lzio.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lapi.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lauxlib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lcode.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lctype.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldebug.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ldo.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lfunc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lgc.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\llex.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\llimits.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lmem.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lobject.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lopcodes.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lparser.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lprefix.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lstate.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lstring.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ltable.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\ltm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lua.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lua.hpp"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\luaconf.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lualib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lundump.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lvm.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lua-5.3.5\src\lzio.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\civetweb_lua.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\lfs.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\LuaXML_lib.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\sqlite3.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\civetweb_private_lua.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\handle_form.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\md5.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\mod_duktape.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\mod_lua.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\mod_lua_shared.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\mod_zlib.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\sha1.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\timer.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\wolfssl_extras.inl"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\utilities\direction.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\utilities\game.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\utilities\snake.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\utilities\snakepit.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\utilities\webserver.h"/>
+    <ClInclude Include="..\..\..\..\modules\battlesnake\battlesnake.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_AbstractFifo.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_Array.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ArrayAllocationBase.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ArrayBase.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_DynamicObject.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ElementComparator.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_HashMap.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_LinkedListPointer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ListenerList.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_NamedValueSet.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_OwnedArray.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_PropertySet.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ReferenceCountedArray.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_ScopedValueSetter.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_SortedSet.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_SparseSet.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\containers\juce_Variant.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_DirectoryIterator.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_File.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileFilter.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileInputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileOutputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_FileSearchPath.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_MemoryMappedFile.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_TemporaryFile.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\files\juce_WildcardFileFilter.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\javascript\juce_Javascript.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\javascript\juce_JSON.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\logging\juce_FileLogger.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\logging\juce_Logger.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_BigInteger.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_Expression.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_MathsFunctions.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_NormalisableRange.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_Random.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_Range.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\maths\juce_StatisticsAccumulator.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_Atomic.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_ByteOrder.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_ContainerDeletePolicy.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_HeapBlock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_HeavyweightLeakedObjectDetector.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_LeakedObjectDetector.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_Memory.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_MemoryBlock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_OptionalScopedPointer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_ReferenceCountedObject.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_ScopedPointer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_SharedResourcePointer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_Singleton.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\memory\juce_WeakReference.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_ConsoleApplication.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_Result.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_RuntimePermissions.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_Uuid.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\misc\juce_WindowsRegistry.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_android_JNIHelpers.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_BasicNativeHeaders.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_mac_ClangBugWorkaround.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_osx_ObjCHelpers.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_posix_IPAddress.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_posix_SharedCode.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\native\juce_win32_ComSmartPtr.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_IPAddress.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_MACAddress.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_NamedPipe.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_Socket.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_URL.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\network\juce_WebInputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_BufferedInputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_FileInputSource.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_InputSource.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_InputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_MemoryInputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_MemoryOutputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_OutputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_SubregionStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\streams\juce_URLInputSource.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\system\juce_CompilerSupport.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\system\juce_PlatformDefs.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\system\juce_StandardHeader.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\system\juce_SystemStats.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\system\juce_TargetPlatform.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_Base64.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharacterFunctions.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharPointer_ASCII.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharPointer_UTF8.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharPointer_UTF16.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_CharPointer_UTF32.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_Identifier.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_LocalisedStrings.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_NewLine.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_String.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringArray.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringPairArray.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringPool.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_StringRef.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\text\juce_TextDiff.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ChildProcess.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_CriticalSection.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_DynamicLibrary.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_HighResolutionTimer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_InterProcessLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_Process.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ReadWriteLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ScopedLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ScopedReadLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ScopedWriteLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_SpinLock.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_Thread.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ThreadLocalValue.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_ThreadPool.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_TimeSliceThread.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\threads\juce_WaitableEvent.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\time\juce_PerformanceCounter.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\time\juce_RelativeTime.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\time\juce_Time.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\unit_tests\juce_UnitTest.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\unit_tests\juce_UnitTestCategories.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\xml\juce_XmlDocument.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\xml\juce_XmlElement.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\crc32.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\deflate.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inffast.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inffixed.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inflate.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\inftrees.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\trees.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\zconf.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\zconf.in.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\zlib.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\zlib\zutil.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_GZIPCompressorOutputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_GZIPDecompressorInputStream.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\zip\juce_ZipFile.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_core\juce_core.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_BlowFish.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_Primes.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\encryption\juce_RSAKey.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_MD5.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_SHA256.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\hashing\juce_Whirlpool.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_cryptography\juce_cryptography.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\app_properties\juce_ApplicationProperties.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\app_properties\juce_PropertiesFile.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\undomanager\juce_UndoableAction.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\undomanager\juce_UndoManager.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_CachedValue.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_Value.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueTree.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueTreeSynchroniser.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\values\juce_ValueWithDefault.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_data_structures\juce_data_structures.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ActionBroadcaster.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ActionListener.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_AsyncUpdater.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ChangeBroadcaster.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\broadcasters\juce_ChangeListener.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_ConnectedChildProcess.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_InterprocessConnection.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_InterprocessConnectionServer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\interprocess\juce_NetworkServiceDiscovery.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_ApplicationBase.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_CallbackMessage.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_DeletedAtShutdown.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_Initialisation.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_Message.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_MessageListener.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_MessageManager.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_MountedVolumeListChangeDetector.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\messages\juce_NotificationType.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\native\juce_linux_EventLoop.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\native\juce_osx_MessageQueue.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\native\juce_win32_HiddenMessageWindow.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\native\juce_win32_WinRTWrapper.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\timers\juce_MultiTimer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\timers\juce_Timer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_events\juce_events.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_Colour.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_ColourGradient.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_Colours.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_FillType.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\colour\juce_PixelFormats.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_GraphicsContext.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_LowLevelGraphicsContext.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_LowLevelGraphicsPostScriptRenderer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\contexts\juce_LowLevelGraphicsSoftwareRenderer.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\effects\juce_DropShadowEffect.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\effects\juce_GlowEffect.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\effects\juce_ImageEffectFilter.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_AttributedString.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_CustomTypeface.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_Font.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_GlyphArrangement.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_TextLayout.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\fonts\juce_Typeface.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_AffineTransform.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_BorderSize.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_EdgeTable.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Line.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Parallelogram.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Path.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_PathIterator.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_PathStrokeType.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Point.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_Rectangle.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\geometry\juce_RectangleList.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\cderror.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jchuff.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jconfig.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdct.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jdhuff.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jerror.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jinclude.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jmemsys.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jmorecfg.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jpegint.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jpeglib.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\jversion.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\transupp.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\png.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngconf.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngdebug.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pnginfo.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngpriv.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\pngstruct.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_Image.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageCache.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageConvolutionKernel.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\images\juce_ImageFileFormat.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_mac_CoreGraphicsContext.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_mac_CoreGraphicsHelpers.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_RenderingHelpers.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\native\juce_win32_Direct2DGraphicsContext.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\placement\juce_Justification.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\placement\juce_RectanglePlacement.h"/>
+    <ClInclude Include="..\..\..\..\..\juce\modules\juce_graphics\juce_graphics.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\licenses\commonjs.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\licenses\lua.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\licenses\murmurhash2.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.5.2\LICENSE.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\licenses\commonjs.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\licenses\lua.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\licenses\murmurhash2.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\third_party\duktape-1.8.0\LICENSE.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\3rdparty\civet\src\CMakeLists.txt"/>
+    <None Include="..\..\..\..\modules\battlesnake\README.md"/>
+    <None Include="..\..\..\..\..\juce\modules\juce_core\native\java\README.txt"/>
+    <None Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt"/>
+    <None Include="..\..\..\..\..\juce\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\resources.rc"/>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>
