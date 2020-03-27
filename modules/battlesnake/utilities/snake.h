@@ -1,14 +1,6 @@
 class Snake
 {
 public:
-    enum Direction
-    {
-        up,
-        down,
-        left,
-        right,
-    };
-    
     String toString (Direction d);
     
     Snake();

@@ -10,6 +10,17 @@ Game::Game (Snake* snake_)
     snake->game = this;
 }
 
+Point<int> Game::getPoint (Point<int> p, Direction d)
+{
+    switch (d)
+    {
+        case up:    return { p.x, p.y - 1 };
+        case left:  return { p.x - 1, p.y };
+        case down:  return { p.x, p.y + 1 };
+        case right: return { p.x + 1, p.y };
+    }
+}
+
 bool Game::isOnBoard (Point<int> p)
 {
     return
@@ -35,14 +46,14 @@ var Game::move (var json)
 {
     updateGameState (json);
     
-    auto toString = [] (Snake::Direction d)
+    auto toString = [] (bs::Direction d)
     {
         switch (d)
         {
-            case Snake::left:  return "left";
-            case Snake::right: return "right";
-            case Snake::up:    return "up";
-            case Snake::down:  return "down";
+            case bs::left:  return "left";
+            case bs::right: return "right";
+            case bs::up:    return "up";
+            case bs::down:  return "down";
         }
     };
     

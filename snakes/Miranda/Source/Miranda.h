@@ -7,7 +7,7 @@ class Miranda : public bs::Snake
 public:
     struct Choice
     {
-        Direction direction;
+        bs::Direction direction;
         int score = 0;
     };
     
@@ -24,7 +24,7 @@ public:
         }
     };
     
-    Direction getMove()
+    bs::Direction getMove()
     {
         int health = getHealth();
         DBG("=======================================================");

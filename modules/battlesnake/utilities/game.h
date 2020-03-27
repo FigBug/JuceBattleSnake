@@ -24,6 +24,7 @@ public:
     int getBoardHeight()                { return height;    }
     
     bool isOnBoard (Point<int> p);
+    Point<int> getPoint (Point<int> p, Direction d);
     
     const OwnedArray<Food>& getFood()   { return food;      }
     const OwnedArray<Body>& getBodies() { return bodies;    }

@@ -65,6 +65,7 @@ using namespace juce;
 using juce::Rectangle;
 
 #include "utilities/webserver.h"
+#include "utilities/direction.h"
 #include "utilities/game.h"
 #include "utilities/snake.h"
 #include "utilities/snakepit.h"

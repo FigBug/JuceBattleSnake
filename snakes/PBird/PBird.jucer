@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="I2FH9E" name="Miranda" projectType="consoleapp" jucerVersion="5.4.7"
+<JUCERPROJECT id="I2FH9E" name="PBird" projectType="consoleapp" jucerVersion="5.4.7"
               cppLanguageStandard="17">
-  <MAINGROUP id="Z9PhsU" name="Miranda">
+  <MAINGROUP id="Z9PhsU" name="PBird">
     <GROUP id="{193FE737-6EC2-5618-D992-62B6B74223E7}" name="Source">
-      <FILE id="d1Xzj1" name="Miranda.cpp" compile="1" resource="0" file="Source/Miranda.cpp"/>
-      <FILE id="YlZ4ce" name="Miranda.h" compile="0" resource="0" file="Source/Miranda.h"/>
+      <FILE id="dKJeBy" name="stackblur.cpp" compile="1" resource="0" file="Source/stackblur.cpp"/>
+      <FILE id="qQLYBs" name="stackblur.h" compile="0" resource="0" file="Source/stackblur.h"/>
+      <FILE id="YlZ4ce" name="PBird.h" compile="0" resource="0" file="Source/PBird.h"/>
       <FILE id="qpf1Pp" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
   </MAINGROUP>

@@ -61,7 +61,7 @@ void Snake::turnRight()
     }
 }
 
-Array<Snake::Direction> Snake::possibleDirections()
+Array<bs::Direction> Snake::possibleDirections()
 {
     switch (currentDirection)
     {
