@@ -106,15 +106,15 @@ std::optional<Point<int>> Snake::getNearestFood()
     return res;
 }
 
-Game::Body* Snake::getNearestPrey()
+Game::Body* Snake::getNearestPrey (double within)
 {
     auto head = getHead().toDouble();
-    double delta = std::numeric_limits<double>::max();
+    double delta = within;
     Game::Body* res = nullptr;
     
     for (auto b : game->getBodies())
     {
-        if (b->me && b->getLength() >= getLength())
+        if (b->me || b->getLength() >= getLength())
             continue;
         
         double newDelta = b->getHead().toDouble().getDistanceFrom (head);

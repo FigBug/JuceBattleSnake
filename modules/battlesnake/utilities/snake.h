@@ -28,8 +28,8 @@ public:
     void avoidWalls();
     
     std::optional<Point<int>> getNearestFood();
-    Game::Body* getNearestPrey();
-    
+    Game::Body* getNearestPrey (double within = 1000.0);
+
     Game* game = nullptr;
     
     Direction currentDirection = up;

@@ -46,6 +46,12 @@ public:
                 area.setPixelAt (0, y, Colour (0xff606060));
                 area.setPixelAt (w - 1, y, Colour (0xff606060));
             }
+            
+            // corners are no good
+            area.setPixelAt (0, 0, Colour (0xff202020));
+            area.setPixelAt (0, h - 1, Colour (0xff202020));
+            area.setPixelAt (w - 1, 0, Colour (0xff202020));
+            area.setPixelAt (w - 1, h - 1, Colour (0xff202020));
 
             // food is great
             for (auto f : game.getFood())
@@ -85,10 +91,13 @@ public:
             auto food = me.getNearestFood();
             if (food.has_value())
                 seekPoints.add (*food);
-            
-            auto prey = me.getNearestPrey();
+                        
+            auto prey = me.getNearestPrey (5.0);
             if (prey != nullptr && me.getHealth() > 50)
+            {
+                seekPoints.clear();
                 seekPoints.addArray (game.possibleNextMoves (*prey));
+            }
             
             if (seekPoints.size() > 0)
             {
@@ -139,13 +148,14 @@ public:
                 
                 while (y != seekPoint.y)
                 {
+                    y += dy;
+
                     if (game.isSquareBlocked ({x, y}))
                     {
                         area = backup;
                         break;
                     }
 
-                    y += dy;
                     area.setPixelAt (x, y, Colour (0xffffffff));
                 }
             }

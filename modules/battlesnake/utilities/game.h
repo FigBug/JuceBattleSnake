@@ -31,10 +31,7 @@ public:
     
     const OwnedArray<Food>& getFood()   { return food;      }
     const OwnedArray<Body>& getBodies() { return bodies;    }
-    
-    std::optional<Point<int>> getNearestFood();
-    Body* getNearestPrey();
-        
+            
     var start (var obj);
     var move (var obj);
     

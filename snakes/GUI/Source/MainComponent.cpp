@@ -5,7 +5,7 @@
 MainComponent::MainComponent()
 {
     bs::Webserver::Options o;
-    o.ports = {7778};
+    o.ports = {7779};
     
     snakePit = std::make_unique<bs::SnakePit>();
     snakePit->addSnakeEggs ([this] () { return new GUI(*this); });
