@@ -123,4 +123,48 @@ void Game::updateGameState (var json)
             }
         }
     }
+    
+    blockedSquares.clear();
+    for (auto b : bodies)
+    {
+        if (! b->me && b->getLength() >= snake->getLength())
+        {
+            auto h = b->getHead ();
+            blockedSquares[{h.x - 1, h.y}] = true;
+            blockedSquares[{h.x + 1, h.y}] = true;
+            blockedSquares[{h.x, h.y - 1}] = true;
+            blockedSquares[{h.x, h.y + 1}] = true;
+        }
+        
+        for (auto p : b->pos)
+            blockedSquares[{p.x, p.y}] = true;
+    }
+}
+
+bool Game::isSquareBlocked (Point<int> p)
+{
+    auto itr = blockedSquares.find ({p.x, p.y});
+    if (itr == blockedSquares.end())
+        return false;
+    
+    return true;
+}
+
+Array<Point<int>> Game::possibleNextMoves (Body& b)
+{
+    Array<Point<int>> res;
+    auto h = b.getHead ();
+    res.add ({h.x - 1, h.y});
+    res.add ({h.x + 1, h.y});
+    res.add ({h.x, h.y - 1});
+    res.add ({h.x, h.y + 1});
+
+    for (int i = res.size(); --i >= 0;)
+    {
+        auto p = res[i];
+        if (! isOnBoard (p) || isSquareBlocked (p))
+            res.remove (i);
+    }
+    
+    return res;
 }

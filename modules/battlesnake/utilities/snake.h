@@ -10,6 +10,7 @@ public:
     
     Game::Body* getOwnBody();
     Point<int> getHead();
+    int getLength();
     int getHealth();
     
     void turnLeft();
@@ -27,6 +28,7 @@ public:
     void avoidWalls();
     
     std::optional<Point<int>> getNearestFood();
+    Game::Body* getNearestPrey();
     
     Game* game = nullptr;
     

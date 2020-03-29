@@ -31,6 +31,14 @@ Point<int> Snake::getHead()
     return {};
 }
 
+int Snake::getLength()
+{
+    if (auto b = getOwnBody())
+        return b->getLength();
+    
+    return 0;
+}
+
 int Snake::getHealth()
 {
     if (auto b = getOwnBody())
@@ -81,25 +89,43 @@ Array<bs::Direction> Snake::possibleDirections()
 
 std::optional<Point<int>> Snake::getNearestFood()
 {
-    if (game->getFood().size() == 0)
-        return {};
-    
-    double delta = 10000;
-    Point<int> best = { 10000, 10000 };
-    
     auto head = getHead().toDouble();
+    double delta = std::numeric_limits<double>::max();
+    std::optional<Point<int>> res;
     
-    for (auto food : game->getFood())
+    for (auto f : game->getFood())
     {
-        double newDelta = Line<double> (head, food->pos.toDouble()).getLength();
+        double newDelta = f->pos.toDouble().getDistanceFrom (head);
         if (newDelta < delta)
         {
             delta = newDelta;
-            best = food->pos;
+            res = f->pos;
         }
     }
     
-    return best;
+    return res;
+}
+
+Game::Body* Snake::getNearestPrey()
+{
+    auto head = getHead().toDouble();
+    double delta = std::numeric_limits<double>::max();
+    Game::Body* res = nullptr;
+    
+    for (auto b : game->getBodies())
+    {
+        if (b->me && b->getLength() >= getLength())
+            continue;
+        
+        double newDelta = b->getHead().toDouble().getDistanceFrom (head);
+        if (newDelta < delta)
+        {
+            delta = newDelta;
+            res = b;
+        }
+    }
+    
+    return res;
 }
 
 void Snake::moveTowards (Point<int> p)

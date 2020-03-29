@@ -13,6 +13,9 @@ public:
         Array<Point<int>> pos;
         
         Rectangle<int> getDangerZone();
+        
+        Point<int> getHead()    { return pos[0];        }
+        int getLength()         { return pos.size();    }
     };
     
     struct Food
@@ -28,9 +31,15 @@ public:
     
     const OwnedArray<Food>& getFood()   { return food;      }
     const OwnedArray<Body>& getBodies() { return bodies;    }
+    
+    std::optional<Point<int>> getNearestFood();
+    Body* getNearestPrey();
         
     var start (var obj);
     var move (var obj);
+    
+    bool isSquareBlocked (Point<int> p);
+    Array<Point<int>> possibleNextMoves (Body& b);
     
 private:
     void updateGameState (var obj);
@@ -43,4 +52,6 @@ private:
     
     OwnedArray<Food> food;
     OwnedArray<Body> bodies;
+    
+    std::map<std::pair<int, int>, bool> blockedSquares;
 };
