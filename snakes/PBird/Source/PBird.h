@@ -67,13 +67,13 @@ public:
             // snakes are bad
             for (auto s : game.getBodies())
             {
-                if (! s->me)
+                if (! s->me && s->getLength() >= me.getLength())
                 {
-                    auto h = s->pos[0];
-                    area.setPixelAt (h.x - 1, h.y, Colour (0xff404040));
-                    area.setPixelAt (h.x + 1, h.y, Colour (0xff404040));
-                    area.setPixelAt (h.x, h.y - 1, Colour (0xff404040));
-                    area.setPixelAt (h.x, h.y + 1, Colour (0xff404040));
+                    auto h = s->getHead();
+                    area.setPixelAt (h.x - 1, h.y, Colour (0xff202020));
+                    area.setPixelAt (h.x + 1, h.y, Colour (0xff202020));
+                    area.setPixelAt (h.x, h.y - 1, Colour (0xff202020));
+                    area.setPixelAt (h.x, h.y + 1, Colour (0xff202020));
                 }
                 
                 for (auto p : s->pos)
@@ -92,7 +92,7 @@ public:
             if (food.has_value())
                 seekPoints.add (*food);
                         
-            auto prey = me.getNearestPrey (5.0);
+            auto prey = me.getNearestPrey (2.0);
             if (prey != nullptr && me.getHealth() > 50)
             {
                 seekPoints.clear();
